@@ -1,1 +1,3 @@
 * -text -eol
+.gitattributes text eol=auto
+*.cmake text eol=auto
