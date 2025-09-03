@@ -9,10 +9,10 @@ set(CMAKE_CXX_COMPILER "${CMAKE_CURRENT_LIST_DIR}/bin/clang++.exe")
 set(CMAKE_AR "${CMAKE_CURRENT_LIST_DIR}/bin/x86_64-unknown-linux-gnu-ar.exe")
 set(CMAKE_RANLIB "${CMAKE_CURRENT_LIST_DIR}/bin/x86_64-unknown-linux-gnu-ranlib.exe")
 
-set(flags "-target x86_64-unknown-linux-gnu -static \"-B${CMAKE_CURRENT_LIST_DIR}/usr/lib64\" -isystem \"${CMAKE_CURRENT_LIST_DIR}/usr/include\"")
+set(flags "-target x86_64-unknown-linux-gnu \"-B${CMAKE_CURRENT_LIST_DIR}/usr/lib64\"")
+set(flags "${flags} --sysroot \"${CMAKE_CURRENT_LIST_DIR}\"")
 set(CMAKE_C_FLAGS_INIT "${CMAKE_C_FLAGS_INIT} ${flags} -D_ISOC99_SOURCE")
 set(CMAKE_CXX_FLAGS_INIT "${CMAKE_CXX_FLAGS_INIT} ${flags}")
-set(CMAKE_EXE_LINKER_FLAGS_INIT "${CMAKE_EXE_LINKER_FLAGS_INIT} \"-Wl,-L${CMAKE_CURRENT_LIST_DIR}/usr/lib64\"")
 
 set(CMAKE_FIND_ROOT_PATH "${CMAKE_CURRENT_LIST_DIR}")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ONLY)
